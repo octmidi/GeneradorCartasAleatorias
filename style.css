@@ -1,0 +1,93 @@
+body {   
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(18, 129, 37);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+.card{
+
+    display: flex;
+    flex-direction: column; /* Alinear elementos en columna */
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5%;
+}
+.header {
+    width: 100%;
+    text-align: left;  
+    padding-left: 10px;
+    font-size: 70px;
+    margin-top: 5px;
+}
+
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+
+
+}
+
+.footer {
+    width: 100%;
+    text-align: left;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-size: 70px;
+}
+.div_button{
+    display: flex;
+    justify-content: center;
+    
+   
+    
+
+}
+button{
+    width: 200px;
+    height: 50px;
+    font-size: 28px;
+    color: rgb(109, 108, 116);
+    border-color: rgb(193, 221, 245);
+    border: none;
+    cursor: pointer;
+    border-radius: 4%;
+    transition: 0.5s;   
+  
+}
+button:hover {
+ 
+    background-color: rgb(130, 188, 240); /* Por ejemplo, cambiar el color de fondo */
+    color: white; /* Cambiar el color del texto */
+    transform: scale(1.1); /* Aplicar un aumento de escala al botón */
+    /* Otros estilos... */
+  }
+
+  .label_time{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    font-size: 28px;
+    color: rgb(119, 236, 72);
+    border-color: rgb(193, 221, 245);
+    border: none;
+    border-radius: 4%;
+    background-color: rgb(44, 44, 44);
+   
+  }
+
+
