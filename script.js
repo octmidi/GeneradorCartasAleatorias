@@ -4,7 +4,7 @@ window.addEventListener('load',function(){
     numCardRandom();
     paloCardRandom();
     addPalo();   
-    colorPalo();
+
 
  }
 )
@@ -22,33 +22,31 @@ function addNumeroCard(){
   }
 
 
-// egregar imagen de pinta 
-function addPalo(){
-
+  // egregar imagen de pinta
+  function addPalo() {
     // imagen suerior
     let divTop = document.getElementById("head");
-    let newImgTop= document.createElement("div");
-    newImgTop.setAttribute("id","imgTop");
-    let image = document.createTextNode(paloCardRandom());
+    let newImgTop = document.createElement("div");
+    newImgTop.setAttribute("id", "imgTop");
+    let palo_color = paloCardRandom();
+  
+    let image = document.createTextNode(palo_color[0]);
     newImgTop.appendChild(image);
     divTop.appendChild(newImgTop);
     let tag = document.getElementById("imgTop");
-    tag.style.color=colorPalo();
-
+    tag.style.color = palo_color[1];
   
     // imagen inferior
     let divBottom = document.getElementById("foot");
-    let newImgBottom= document.createElement("div");
+    let newImgBottom = document.createElement("div");
     newImgBottom.setAttribute("id", "imgInvert");
     let imgBottom = document.createTextNode(image.textContent);
     newImgBottom.appendChild(imgBottom);
-    divBottom.appendChild(newImgBottom);              // agrega id a img
+    divBottom.appendChild(newImgBottom); // agrega id a img
     let element = document.getElementById("imgInvert");
     element.style.transform = "rotate(180deg)";
-    element.style.color=tag.style.color
-
-   
-} 
+    element.style.color = tag.style.color;
+  }
   
 //numero aleatorio
 function numCardRandom(){
@@ -74,44 +72,31 @@ function numCardRandom(){
 }
 
 //pinta alaeatoria
-function paloCardRandom(){
-
-    let palo = '';
-    palo = Math.floor(Math.random()* 4) + 1;
-   switch (palo){
+function paloCardRandom() {
+  let palo = "";
+  palo = Math.floor(Math.random() * 4) + 1;
+  switch (palo) {
     case 1:
-        palo = '♦';
-        break;
+      palo = "♦";
+      color = "red";
+      break;
     case 2:
-        palo = '♥';
-        break;
+      palo = "♥";
+      color = "red";
+      break;
     case 3:
-        palo = '♠';
-        break;
+      palo = "♠";
+      color = "black";
+      break;
     case 4:
-        palo = '♣';            
-        break;
-   }    
-return palo;
-
+      palo = "♣";
+      color = "black";
+      break;
+  }
+  let palocolor= [palo, color]
+  return palocolor;
 }
 
-// color aleatorio
-function colorPalo(){
-
-    color = (Math.floor(Math.random()*2 ) + 1).toString() ;
-
-    switch(color){
-    case '1': 
-        color = 'red';
-        break;
-    case '2':
-        color = 'black';
-        break;
-    }
-    return color;
-    
-}
 
 // button new card
 function NewCard(){
